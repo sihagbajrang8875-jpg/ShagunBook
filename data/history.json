@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1709873400000,
+    "name": "Raj Kumar",
+    "amount": "5000",
+    "event": "Wedding",
+    "date": "2024-03-08",
+    "notes": "Marriage ceremony gift"
+  },
+  {
+    "id": 1709873500000,
+    "name": "Priya Singh",
+    "amount": "3000",
+    "event": "Engagement",
+    "date": "2024-03-07",
+    "notes": "Engagement party"
+  },
+  {
+    "id": 1709873600000,
+    "name": "Arjun Patel",
+    "amount": "2000",
+    "event": "Birthday",
+    "date": "2024-03-05",
+    "notes": "Birthday celebration"
+  }
+]
