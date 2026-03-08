@@ -152,9 +152,9 @@ export default function Home({ onSectionChange }) {
         .stat-card:hover    { transform: translateY(-4px); }
       `}</style>
 
-      {/* Floating background orbs */}
+      {/* Floating background orbs - hidden on mobile for performance */}
       {floatingOrbs.map((orb, i) => (
-        <div key={i} style={{
+        <div key={i} className="hidden sm:block" style={{
           position: 'fixed',
           width: orb.size,
           height: orb.size,

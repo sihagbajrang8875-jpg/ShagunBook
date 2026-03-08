@@ -19,7 +19,7 @@ function Header({ activeSection, onSectionChange }) {
   return (
     <>
       {/* Spacer so page content doesn't hide under fixed header */}
-      <div style={{ height: 88 }} />
+      <div className="h-20 sm:h-22" />
 
       <header
         style={{
@@ -28,7 +28,7 @@ function Header({ activeSection, onSectionChange }) {
           left: 0,
           right: 0,
           zIndex: 1000,
-          padding: '12px 24px',
+          padding: '12px 16px', // Reduced padding on mobile
           display: 'flex',
           justifyContent: 'center',
           pointerEvents: 'none',
@@ -40,11 +40,11 @@ function Header({ activeSection, onSectionChange }) {
             maxWidth: 860,
             pointerEvents: 'all',
             borderRadius: 22,
-            padding: '10px 18px',
+            padding: '10px 12px', // Reduced padding on mobile
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: 16,
+            gap: 8, // Reduced gap on mobile
             background: scrolled
               ? 'rgba(255,255,255,0.82)'
               : 'rgba(255,255,255,0.97)',
@@ -63,9 +63,10 @@ function Header({ activeSection, onSectionChange }) {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 12,
+              gap: 8, // Reduced gap on mobile
               cursor: 'pointer',
               userSelect: 'none',
+              flexShrink: 0, // Prevent shrinking
             }}
           >
             {/* Wrap Logo so it inherits pointer cursor */}
@@ -73,10 +74,10 @@ function Header({ activeSection, onSectionChange }) {
               <Logo />
             </div>
 
-            <div style={{ lineHeight: 1.2 }}>
+            <div style={{ lineHeight: 1.2 }} className="hidden sm:block">
               <div style={{
                 fontFamily: "'Playfair Display', 'Georgia', serif",
-                fontSize: 22,
+                fontSize: 20, // Slightly smaller on mobile
                 fontWeight: 700,
                 background: 'linear-gradient(90deg, #7c3aed 0%, #3b82f6 100%)',
                 WebkitBackgroundClip: 'text',
@@ -87,7 +88,7 @@ function Header({ activeSection, onSectionChange }) {
                 ShagunBook
               </div>
               <div style={{
-                fontSize: 11,
+                fontSize: 10, // Smaller subtitle
                 color: '#9ca3af',
                 fontWeight: 500,
                 letterSpacing: '0.4px',
@@ -102,10 +103,10 @@ function Header({ activeSection, onSectionChange }) {
           <nav style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 4,
+            gap: 2, // Reduced gap on mobile
             background: 'rgba(243,244,246,0.7)',
             borderRadius: 14,
-            padding: '4px 5px',
+            padding: '4px 3px', // Reduced padding on mobile
           }}>
             {navItems.map(({ key, label, icon }) => {
               const isActive = activeSection === key
@@ -117,12 +118,12 @@ function Header({ activeSection, onSectionChange }) {
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 6,
-                    padding: '8px 16px',
+                    gap: 4, // Reduced gap on mobile
+                    padding: '6px 10px', // Reduced padding on mobile
                     borderRadius: 10,
                     border: 'none',
                     fontFamily: 'system-ui, -apple-system, sans-serif',
-                    fontSize: 13.5,
+                    fontSize: 12, // Smaller font on mobile
                     fontWeight: isActive ? 600 : 500,
                     color: isActive ? '#ffffff' : '#6b7280',
                     background: isActive
@@ -148,8 +149,8 @@ function Header({ activeSection, onSectionChange }) {
                     }
                   }}
                 >
-                  <span style={{ fontSize: 15 }}>{icon}</span>
-                  {label}
+                  <span style={{ fontSize: 13 }}>{icon}</span>
+                  <span className="hidden sm:inline">{label}</span> {/* Hide text on mobile */}
                 </button>
               )
             })}

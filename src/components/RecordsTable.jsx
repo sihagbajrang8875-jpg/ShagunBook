@@ -27,16 +27,23 @@ function RecordsTable({ records, onDelete, onEdit, editingId }) {
   }
 
   return (
-    <div style={{ fontFamily:"'DM Sans', system-ui, sans-serif", overflowX:'auto' }}>
+    <div style={{ fontFamily:"'DM Sans', system-ui, sans-serif", overflowX:'auto', WebkitOverflowScrolling: 'touch' }}>
       <style>{`
         @keyframes rowIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
         .rec-row { animation: rowIn 0.3s ease both; transition: background 0.15s; }
         .rec-row:hover { background: #faf8ff !important; }
         .edit-btn:hover   { background: linear-gradient(135deg,#3b82f6,#1d4ed8) !important; transform:translateY(-1px); box-shadow:0 4px 12px rgba(59,130,246,0.35) !important; }
         .delete-btn:hover { background: linear-gradient(135deg,#ef4444,#dc2626) !important; transform:translateY(-1px); box-shadow:0 4px 12px rgba(239,68,68,0.35) !important; }
+        
+        /* Mobile responsive table */
+        @media (max-width: 640px) {
+          .mobile-table { font-size: 14px; }
+          .mobile-table th, .mobile-table td { padding: 8px 6px; }
+          .mobile-table th { font-size: 11px; }
+        }
       `}</style>
 
-      <table style={{ width:'100%', borderCollapse:'separate', borderSpacing:0 }}>
+      <table style={{ width:'100%', borderCollapse:'separate', borderSpacing:0, minWidth: '600px' }} className="mobile-table">
         <thead>
           <tr>
             {['👤 Name','🎊 Occasion','💰 Amount','📅 Date','⚙️ Actions'].map((col, i) => (
