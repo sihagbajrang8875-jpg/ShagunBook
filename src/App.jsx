@@ -79,14 +79,14 @@ function App() {
       ) : (
         <>
           <Header activeSection={activeSection} onSectionChange={setActiveSection} />
-          <div className="max-w-6xl mx-auto px-4 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
             {activeSection === 'add' ? (
               /* Add Records Section */
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
                 {/* Left Sidebar - Add Record Form */}
-                <div className="lg:col-span-1">
-                  <div className="bg-white rounded-lg shadow-lg p-6 sticky top-8">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                <div className="xl:col-span-1 order-2 xl:order-1">
+                  <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 sticky top-20">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
                       {editingId ? 'Edit Record' : 'Add Record'}
                     </h2>
                     <AddRecord
@@ -99,7 +99,7 @@ function App() {
                 </div>
 
                 {/* Right Content - Records Display */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="xl:col-span-2 order-1 xl:order-2 space-y-4 sm:space-y-6">
                   {/* Total Amount Card */}
                   <TotalAmount amount={totalAmount} recordCount={filteredRecords.length} />
 
@@ -119,12 +119,12 @@ function App() {
               </div>
             ) : (
               /* History Section */
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Download Button */}
-                <div className="flex justify-end">
+                <div className="flex justify-start sm:justify-end">
                   <button
                     onClick={downloadHistory}
-                    className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                    className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg text-sm sm:text-base"
                   >
                     💾 Download History
                   </button>
