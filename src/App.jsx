@@ -74,7 +74,7 @@ function App() {
       {activeSection === 'home' ? (
         <>
           <Header activeSection={activeSection} onSectionChange={setActiveSection} />
-          <Home />
+          <Home onSectionChange={setActiveSection} />
         </>
       ) : (
         <>

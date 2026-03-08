@@ -229,10 +229,11 @@ export default function Home({ onSectionChange }) {
         </div>
 
         {/* CTA Buttons */}
-        <div className={heroIn ? 'fade-up' : ''} style={{ animationDelay: '240ms', display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
+        <div className={heroIn ? 'fade-up' : ''} style={{ animationDelay: '240ms', display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap', position: 'relative', zIndex: 10 }}>
           <button
+            type="button"
             className="cta-btn"
-            onClick={() => onSectionChange?.('add')}
+            onClick={() => onSectionChange('add')}
             style={{
               cursor: 'pointer',
               padding: '14px 36px', borderRadius: 14, border: 'none',
@@ -242,13 +243,16 @@ export default function Home({ onSectionChange }) {
               transition: 'all 0.25s ease',
               fontFamily: 'inherit',
               display: 'flex', alignItems: 'center', gap: 8,
+              position: 'relative',
+              zIndex: 10,
             }}
           >
             📝 Add Your First Record
           </button>
           <button
+            type="button"
             className="cta-btn"
-            onClick={() => onSectionChange?.('history')}
+            onClick={() => onSectionChange('history')}
             style={{
               cursor: 'pointer',
               padding: '14px 32px', borderRadius: 14,
@@ -260,6 +264,8 @@ export default function Home({ onSectionChange }) {
               fontFamily: 'inherit',
               backdropFilter: 'blur(8px)',
               display: 'flex', alignItems: 'center', gap: 8,
+              position: 'relative',
+              zIndex: 10,
             }}
           >
             📊 View History
@@ -522,8 +528,9 @@ export default function Home({ onSectionChange }) {
             Join thousands of Indian families who never miss a shagun moment.
           </p>
           <button
+            type="button"
             className="cta-btn"
-            onClick={() => onSectionChange?.('add')}
+            onClick={() => onSectionChange('add')}
             style={{
               cursor: 'pointer',
               padding: '15px 40px', borderRadius: 14, border: 'none',
@@ -532,6 +539,8 @@ export default function Home({ onSectionChange }) {
               boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
               transition: 'all 0.25s ease',
               fontFamily: 'inherit',
+              position: 'relative',
+              zIndex: 10,
             }}
           >
             📝 Add My First Record →
